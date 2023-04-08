@@ -2,7 +2,7 @@ terraform {
   // Snowflake setup
   required_providers {
     snowflake = {
-      source = "Snowflake-Labs/snowflake"
+      source  = "Snowflake-Labs/snowflake"
       version = "0.61.0"
     }
   }
@@ -23,10 +23,10 @@ provider "snowflake" {
   account  = "op06195" # the Snowflake account identifier
 
   // optional, exactly one must be set
-  password  = "Dmw0234567!@"
+  password = "Dmw0234567!@"
 
   // optional
-  region    = "ca-central-1.aws" # required if using legacy format for account identifier
+  region = "ca-central-1.aws" # required if using legacy format for account identifier
 }
 
 resource "snowflake_database" "demo" {
