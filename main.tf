@@ -16,8 +16,17 @@ terraform {
   }
 }
 
+
 provider "snowflake" {
-  // Filled in by terraform wrokspace envirement variables.
+  // required
+  username = "${env.USERNAME}"
+  account  = "${env.ACCOUNT}" # the Snowflake account identifier
+
+  // optional, exactly one must be set
+  password = "${env.PASSWORD}"
+
+  // optional
+  region = "${env.REGION}" # required if using legacy format for account identifier
 }
 
 resource "snowflake_database" "demo_update" {
