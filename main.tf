@@ -28,8 +28,8 @@ resource "snowflake_database" "AZURE_PIPELINE_TST" {
   data_retention_time_in_days = 3
 }
 
-resource "snowflake_database" "AZURE_PIPELINE_PULLREQUEST" {
-  name                        = "AZURE_PIPELINE_PULLREQUEST"
+resource "snowflake_database" "AZURE_PIPELINE_DEV" {
+  name                        = "AZURE_PIPELINE_DEV"
   comment                     = "Dev azure account for pipelining."
   data_retention_time_in_days = 3
 }
