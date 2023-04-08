@@ -16,17 +16,8 @@ terraform {
   }
 }
 
-
 provider "snowflake" {
-  // required
-  username = "danielwilczak"
-  account  = "op06195" # the Snowflake account identifier
-
-  // optional, exactly one must be set
-  password = "Dmw0234567!@"
-
-  // optional
-  region = "ca-central-1.aws" # required if using legacy format for account identifier
+  // Filled in by terraform wrokspace envirement variables.
 }
 
 resource "snowflake_database" "demo_update" {
