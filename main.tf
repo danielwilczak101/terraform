@@ -1,12 +1,13 @@
 terraform {
+  // Snowflake setup
   required_providers {
     snowflake = {
-      source  = "chanzuckerberg/snowflake"
-      version = "0.25.17"
+      source = "Snowflake-Labs/snowflake"
+      version = "0.61.0"
     }
   }
-
-  backend "remote" {
+  // Terraform setup.
+  cloud {
     organization = "danielwilczak"
 
     workspaces {
@@ -15,11 +16,17 @@ terraform {
   }
 }
 
+
 provider "snowflake" {
-  SNOWFLAKE_ACCOUNT = var.SNOWFLAKE_ACCOUNT
-  SNOWFLAKE_REGION = var.SNOWFLAKE_REGION
-  SNOWFLAKE_USER = var.SNOWFLAKE_USER
-  SNOWFLAKE_PASSWORD = var.SNOWFLAKE_PASSWORD
+  // required
+  username = "danielwilczak"
+  account  = "op06195" # the Snowflake account identifier
+
+  // optional, exactly one must be set
+  password  = "Dmw0234567!@"
+
+  // optional
+  region    = "ca-central-1.aws" # required if using legacy format for account identifier
 }
 
 resource "snowflake_database" "demo" {
