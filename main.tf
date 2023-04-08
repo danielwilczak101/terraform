@@ -16,6 +16,10 @@ terraform {
 }
 
 provider "snowflake" {
+  SNOWFLAKE_ACCOUNT = var.SNOWFLAKE_ACCOUNT
+  SNOWFLAKE_REGION = var.SNOWFLAKE_REGION
+  SNOWFLAKE_USER = var.SNOWFLAKE_USER
+  SNOWFLAKE_PASSWORD = var.SNOWFLAKE_PASSWORD
 }
 
 resource "snowflake_database" "demo" {
