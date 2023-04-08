@@ -1,10 +1,11 @@
 terraform {
   required_providers {
     snowflake = {
-      source  = "Snowflake-Labs/snowflake"
-      version = "0.61.0"
+      source  = "chanzuckerberg/snowflake"
+      version = "0.25.17"
     }
   }
+
   backend "remote" {
     organization = "danielwilczak"
 
@@ -17,20 +18,7 @@ terraform {
 provider "snowflake" {
 }
 
-resource "snowflake_database" "AZURE_PIPELINE_PRD" {
-  name                        = "AZURE_PIPELINE_PRD"
-  comment                     = "Production azure account for pipelining."
-  data_retention_time_in_days = 3
-}
-
-resource "snowflake_database" "AZURE_PIPELINE_TST" {
-  name                        = "AZURE_PIPELINE_TST"
-  comment                     = "Test azure account for pipelining."
-  data_retention_time_in_days = 3
-}
-
-resource "snowflake_database" "AZURE_PIPELINE_DEV" {
-  name                        = "AZURE_PIPELINE_DEV"
-  comment                     = "Dev azure account for pipelining."
-  data_retention_time_in_days = 3
+resource "snowflake_database" "demo_db" {
+  name    = "DEMO_DB"
+  comment = "Database for Snowflake Terraform demo"
 }
