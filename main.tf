@@ -29,7 +29,7 @@ resource "snowflake_database" "AZURE_PIPELINE_TST" {
 }
 
 resource "snowflake_database" "AZURE_PIPELINE_NEWNEW" {
-  name                        = "AZURE_PIPELINE_TESTING"
+  name                        = "AZURE_PIPELINE_NEWNEW"
   comment                     = "Dev azure account for pipelining."
   data_retention_time_in_days = 3
 }
