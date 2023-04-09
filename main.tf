@@ -35,7 +35,7 @@ provider "snowflake" {
 
 resource "snowflake_database" "database_1" {
   // 
-  name    = "DEMO_JACK"
+  name    = "DEMO_JACKING"
   comment = "Database for me Terraform demo"
 }
 
