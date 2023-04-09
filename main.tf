@@ -29,7 +29,7 @@ provider "snowflake" {
   region = "ca-central-1.aws" # required if using legacy format for account identifier
 }
 
-resource "snowflake_database" "DEMO_NOT_ANYMORE" {
-  name    = "DEMO_NOT_ANYMORE"
+resource "snowflake_database" "DEMO" {
+  name    = "DEMO"
   comment = "Database for me Terraform demo"
 }
