@@ -16,10 +16,10 @@ terraform {
   }
 }
 
-var "SNOWFLAKE_USERNAME" { type = string }
-var "SNOWFLAKE_ACCOUNT" { type = string }
-var "SNOWFLAKE_PASSWORD" { type = string }
-var "SNOWFLAKE_REGION" { type = string }
+variable "SNOWFLAKE_USERNAME" { type = string }
+variable "SNOWFLAKE_ACCOUNT" { type = string }
+variable "SNOWFLAKE_PASSWORD" { type = string }
+variable "SNOWFLAKE_REGION" { type = string }
 
 provider "snowflake" {
   // required
