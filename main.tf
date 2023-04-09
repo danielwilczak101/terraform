@@ -30,6 +30,6 @@ provider "snowflake" {
 }
 
 resource "snowflake_database" "DEMO" {
-  name    = "DEMO_update"
+  name    = "DEMO_JACK"
   comment = "Database for me Terraform demo"
 }
