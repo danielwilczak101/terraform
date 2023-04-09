@@ -16,9 +16,19 @@ terraform {
   }
 }
 
-
 provider "snowflake" {
-  // Added using workspace variable -> terraform variables. 
+  region   = "ca-central-1.aws"
+  account  = "op06195"
+  username = var.username
+  password = var.password
+}
+
+variable "username" {
+  default = env.USERNAME
+}
+
+variable "password" {
+  default = env.PASSWORD
 }
 
 resource "snowflake_database" "demo_update" {
