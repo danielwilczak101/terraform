@@ -19,14 +19,14 @@ terraform {
 
 provider "snowflake" {
   // required
-  username = "${env.USERNAME}"
-  account  = "${env.ACCOUNT}" # the Snowflake account identifier
+  username = env.USERNAME
+  account  = env.ACCOUNT # the Snowflake account identifier
 
   // optional, exactly one must be set
-  password = "${env.PASSWORD}"
+  password = env.PASSWORD
 
   // optional
-  region = "${env.REGION}" # required if using legacy format for account identifier
+  region = env.REGION # required if using legacy format for account identifier
 }
 
 resource "snowflake_database" "demo_update" {
