@@ -16,11 +16,6 @@ terraform {
   }
 }
 
-variable "SNOWFLAKE_USERNAME" { type = string }
-variable "SNOWFLAKE_ACCOUNT" { type = string }
-variable "SNOWFLAKE_PASSWORD" { type = string }
-variable "SNOWFLAKE_REGION" { type = string }
-
 provider "snowflake" {
   // required
   username = var.SNOWFLAKE_USERNAME
@@ -44,3 +39,4 @@ resource "snowflake_database" "database_2" {
   name    = "DEMO_DAN"
   comment = "Database for me Terraform demo"
 }
+
