@@ -16,6 +16,7 @@ terraform {
   }
 }
 
+
 provider "snowflake" {
   // required
   username = var.SNOWFLAKE_USERNAME
