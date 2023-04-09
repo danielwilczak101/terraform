@@ -16,20 +16,25 @@ terraform {
   }
 }
 
+var "SNOWFLAKE_USERNAME" { type = string }
+var "SNOWFLAKE_ACCOUNT" { type = string }
+var "SNOWFLAKE_PASSWORD" { type = string }
+var "SNOWFLAKE_REGION" { type = string }
 
 provider "snowflake" {
   // required
-  username = "danielwilczak"
-  account  = "op06195" # the Snowflake account identifier
+  username = var.SNOWFLAKE_USERNAME
+  account  = var.SNOWFLAKE_ACCOUNT
 
   // optional, exactly one must be set
-  password = "Dmw0234567!@"
+  password = var.SNOWFLAKE_PASSWORD
 
   // optional
-  region = "ca-central-1.aws" # required if using legacy format for account identifier
+  region = var.SNOWFLAKE_REGION
 }
 
 resource "snowflake_database" "DEMO" {
+  // 
   name    = "DEMO_JACK"
   comment = "Database for me Terraform demo"
 }
