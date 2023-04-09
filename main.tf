@@ -33,8 +33,14 @@ provider "snowflake" {
   region = var.SNOWFLAKE_REGION
 }
 
-resource "snowflake_database" "DEMO" {
+resource "snowflake_database" "database" {
   // 
   name    = "DEMO_JACK"
+  comment = "Database for me Terraform demo"
+}
+
+resource "snowflake_database" "database" {
+  // 
+  name    = "DEMO_DAN"
   comment = "Database for me Terraform demo"
 }
