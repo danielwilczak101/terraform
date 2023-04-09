@@ -16,19 +16,17 @@ terraform {
   }
 }
 
+
 provider "snowflake" {
-  region   = "ca-central-1.aws"
-  account  = "op06195"
-  username = var.username
-  password = var.password
-}
+  // required
+  username = "danielwilczak"
+  account  = "op06195" # the Snowflake account identifier
 
-variable "username" {
-  default = env.USERNAME
-}
+  // optional, exactly one must be set
+  password = "Dmw0234567!@"
 
-variable "password" {
-  default = env.PASSWORD
+  // optional
+  region = "ca-central-1.aws" # required if using legacy format for account identifier
 }
 
 resource "snowflake_database" "demo_update" {
