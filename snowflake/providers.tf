@@ -9,3 +9,4 @@ provider "snowflake" {
   // optional
   region = var.SNOWFLAKE_REGION
 }
+
