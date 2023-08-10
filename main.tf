@@ -11,7 +11,7 @@ terraform {
     organization = "danielwilczak"
 
     workspaces {
-      name = "terraform"
+      name = "Spiny_Snowflake"
     }
   }
 }
