@@ -33,13 +33,37 @@ provider "snowflake" {
   region = var.SNOWFLAKE_REGION
 }
 
-resource "snowflake_database" "spiny_db" {
-  name    = "spiny_db"
+resource "snowflake_database" "db" {
+  name    = "SPINY_DB"
   comment = "Demo to show kyle you can git control snowflake."
 }
 
-resource "snowflake_schema" "ml_models" {
-  database = "spiny_db"
-  name     = "ml_models"
+resource "snowflake_schema" "schema" {
+  database = "SPINY_DB"
+  name     = "ML_MODELS"
   comment  = "A schema that stores all data related to our machine learning models."
+}
+
+esource "snowflake_procedure" "proc" {
+  name     = "SAMPLEPROC"
+  database = snowflake_database.db.name
+  schema   = snowflake_schema.schema.name
+  language = "JAVASCRIPT"
+  arguments {
+    name = "arg1"
+    type = "varchar"
+  }
+  arguments {
+    name = "arg2"
+    type = "DATE"
+  }
+  comment             = "Procedure with 2 arguments"
+  return_type         = "VARCHAR"
+  execute_as          = "CALLER"
+  return_behavior     = "IMMUTABLE"
+  null_input_behavior = "RETURNS NULL ON NULL INPUT"
+  statement           = <<EOT
+  var X=1
+  return X
+  EOT
 }
