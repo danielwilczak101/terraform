@@ -67,3 +67,11 @@ resource "snowflake_procedure" "proc" {
   return X
   EOT
 }
+
+resource "snowflake_warehouse" "warehouse" {
+  name           = "snowpark_opt_wh"
+  comment        = "foo"
+  warehouse_size = "MEDIUM"
+  warehouse_type = "SNOWPARK-OPTIMIZED"
+  max_concurrency_level = 1
+}
