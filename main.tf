@@ -44,7 +44,7 @@ resource "snowflake_schema" "schema" {
   comment  = "A schema that stores all data related to our machine learning models."
 }
 
-esource "snowflake_procedure" "proc" {
+resource "snowflake_procedure" "proc" {
   name     = "SAMPLEPROC"
   database = snowflake_database.db.name
   schema   = snowflake_schema.schema.name
