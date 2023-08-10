@@ -59,6 +59,7 @@ resource "snowflake_procedure" "proc" {
   comment             = "Creates a stored procedure that trains a linear regression model"
   return_type         = "VARIANT"
   packages = ["snowflake-snowpark-python", "scikit-learn", "joblib"]
+  handler = "main"
   statement           = <<EOT
   import os
   from sklearn.compose import ColumnTransformer
