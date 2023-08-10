@@ -32,3 +32,8 @@ provider "snowflake" {
   // optional
   region = var.SNOWFLAKE_REGION
 }
+
+resource "snowflake_database" "kyle_db" {
+  name    = "KYLE_DB"
+  comment = "Demo to show kyle you can git control snowflake."
+}
