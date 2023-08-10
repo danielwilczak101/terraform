@@ -33,7 +33,13 @@ provider "snowflake" {
   region = var.SNOWFLAKE_REGION
 }
 
-resource "snowflake_database" "kyle_db" {
-  name    = "KYLE_DB"
+resource "snowflake_database" "spiny_db" {
+  name    = "spiny_db"
   comment = "Demo to show kyle you can git control snowflake."
+}
+
+resource "snowflake_schema" "ml_models" {
+  database = "spiny_db"
+  name     = "ml_models"
+  comment  = "A schema that stores all data related to our machine learning models."
 }
