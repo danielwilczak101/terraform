@@ -46,8 +46,8 @@ resource "snowflake_schema" "ML_MODELS" {
 
 resource "snowflake_procedure" "SAMPLEPROC" {
   name     = "SAMPLEPROC"
-  database = snowflake_database.db.name
-  schema   = snowflake_schema.schema.name
+  database = snowflake_database.SPINY_DB.name
+  schema   = snowflake_schema.ML_MODELS.name
   language = "JAVASCRIPT"
   arguments {
     name = "arg1"
