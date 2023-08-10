@@ -33,10 +33,17 @@ provider "snowflake" {
   region = var.SNOWFLAKE_REGION
 }
 
+resource "snowflake_database" "db_snow" {
+  name    = "SNOWING"
+  comment = "TEMP"
+}
+
 resource "snowflake_database" "db" {
   name    = "SPINY_DB"
   comment = "Demo to show kyle you can git control snowflake."
 }
+
+
 
 resource "snowflake_schema" "schema" {
   database = "SPINY_DB"
