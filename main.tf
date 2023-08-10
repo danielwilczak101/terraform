@@ -38,6 +38,11 @@ resource "snowflake_database" "db" {
   comment = "Demo to show kyle you can git control snowflake procedure for ML models."
 }
 
+resource "snowflake_database" "db_pr" {
+  name    = "PR_DB"
+  comment = "Showing how a PR looks for terraform/snowflake."
+}
+
 resource "snowflake_schema" "schema" {
   database = "SPINY_DB"
   name     = "ML_MODELS"
