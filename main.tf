@@ -43,8 +43,6 @@ resource "snowflake_database" "db" {
   comment = "Demo to show kyle you can git control snowflake."
 }
 
-
-
 resource "snowflake_schema" "schema" {
   database = "SPINY_DB"
   name     = "ML_MODELS"
