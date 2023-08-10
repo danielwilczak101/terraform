@@ -44,6 +44,12 @@ resource "snowflake_schema" "schema" {
   comment  = "A schema that stores all data related to our machine learning models."
 }
 
+resource "snowflake_warehouse" "warehouse" {
+  name           = "SNOWPARK_OPT_WH"
+  warehouse_size = "MEDIUM"
+  warehouse_type = "SNOWPARK-OPTIMIZED"
+}
+
 resource "snowflake_procedure" "proc" {
   name     = "SAMPLE_PROC"
   database = snowflake_database.db.name
@@ -68,9 +74,3 @@ resource "snowflake_procedure" "proc" {
   EOT
 }
 
-resource "snowflake_warehouse" "warehouse" {
-  name           = "SNOWPARK_OPT_WH"
-  warehouse_size = "MEDIUM"
-  warehouse_type = "SNOWPARK-OPTIMIZED"
-  max_concurrency_level = 1
-}
