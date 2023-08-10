@@ -44,16 +44,15 @@ select
 9. You must create your database before you your create any other resources or else the github action will fail.
 
 Run first:
-```json
+```
 resource "snowflake_database" "db" {
   name    = "SPINY_DB"
   comment = "Demo to show kyle you can git control snowflake procedure for ML models."
 }
 ```
 
-Then run:
-```json
-
+Then run:  
+```
 resource "snowflake_database" "db" {
   name    = "SPINY_DB"
   comment = "Demo to show kyle you can git control snowflake procedure for ML models."
