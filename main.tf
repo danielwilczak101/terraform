@@ -33,6 +33,14 @@ provider "snowflake" {
   region = var.SNOWFLAKE_REGION
 }
 
+
+// Example - Pull request:
+resource "snowflake_database" "db_pr" {
+  name    = "PR_DB"
+  comment = "Showing how a PR looks for terraform/snowflake."
+}
+
+// Example - Data Science:
 resource "snowflake_database" "db" {
   name    = "SPINY_DB"
   comment = "Demo to show kyle you can git control snowflake procedure for ML models."
