@@ -1,6 +1,9 @@
 # Terraform connected to snowflake
 My goal with this repo is to learn more about terraform/snowflake to provide "code as infrustructure".
 
+### Resurce doucmentation:
+For terraform syntax documentation: https://registry.terraform.io/providers/Snowflake-Labs/snowflake/latest/docs
+
 ### Current code:
 Shows how users can build snowpark procedures using terraform to git control snowpark models and infrastructure.
 
